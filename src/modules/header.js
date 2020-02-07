@@ -1,4 +1,4 @@
-import "../styles/header.css";
+import "../styles/header.scss";
 function header() {
   var rootDom = document.getElementById("root");
   var dom = document.createElement("div");

@@ -1,4 +1,4 @@
-import "../styles/content.css";
+import "../styles/content.scss";
 function content() {
   var rootDom = document.getElementById("root");
   var dom = document.createElement("div");

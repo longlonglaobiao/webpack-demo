@@ -1,4 +1,4 @@
-import "../styles/footer.css";
+import "../styles/footer.scss";
 function footer() {
   var rootDom = document.getElementById("root");
   var dom = document.createElement("div");
