@@ -1,17 +1,15 @@
 import "../styles/header.scss";
-function header() {
-  var rootDom = document.getElementById("root");
-  var dom = document.createElement("div");
-  var num = 1;
-
+let header = () => {
+  let rootDom = document.getElementById("root");
+  let dom = document.createElement("div");
+  let num = 1;
   dom.setAttribute("id", "header");
   dom.innerText = num;
-
-  dom.onclick = function() {
+  dom.onclick = () => {
     num++;
     dom.innerText = num;
   };
   rootDom.appendChild(dom);
-}
+};
 
 export default header;
