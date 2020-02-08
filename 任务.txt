@@ -1,4 +1,0 @@
-1、使用 sourceMap
-2、使用 webpackDevServer
-3、使用 Hot Module Replacement 实现同一个页面中 只更新某一模块功能，比如计时器
-4、处理高版本的 js 语法
