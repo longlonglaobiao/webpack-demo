@@ -5,6 +5,7 @@ function footer() {
   dom.setAttribute("id", "footer");
   dom.innerText = "this is footer dom";
   rootDom.appendChild(dom);
+  concolo.log(555);
 }
 
 export default footer;
