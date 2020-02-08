@@ -2,10 +2,14 @@ import "../styles/footer.scss";
 function footer() {
   var rootDom = document.getElementById("root");
   var dom = document.createElement("div");
+  var num = 7;
   dom.setAttribute("id", "footer");
-  dom.innerText = "this is footer dom";
+  dom.innerText = num;
+
+  dom.onclick = function() {
+    dom.innerText = num++;
+  };
   rootDom.appendChild(dom);
-  concolo.log(555);
 }
 
 export default footer;
