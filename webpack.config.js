@@ -5,11 +5,12 @@ const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  devtool: "clean-module-eval-source-map",
+  devtool: "clean-module-eval-source-map", // 这个用于查找代码出错的地方（在源文件中找，而不是在生成的文件中）
   devServer: {
-    contentBase: "dist",
-    hot: true,
-    hotOnly: true,
+    // 开启服务器
+    contentBase: "dist", // 服务器的根地址
+    hot: true, // 开启热更替
+    hotOnly: true, // 表示当热更替失效时，也不要即时刷新页面
     port: 8000
   },
   entry: "./src/index.js",
@@ -30,7 +31,7 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1
+              importLoaders: 1 // 表示，在应用改 loader 之前，先要应用前面一个模块（避免 .scss 嵌套引用的问题）
             }
           },
           "sass-loader"
@@ -49,7 +50,7 @@ module.exports = {
       },
       {
         test: /.js$/,
-        exclude: /node_modules/,
+        exclude: /node_modules/, // 排除该文件夹的转换，因为这些模块大多已经经过了转换
         use: {
           loader: "babel-loader",
           options: {
@@ -57,8 +58,9 @@ module.exports = {
               [
                 "@babel/preset-env",
                 {
-                  useBuiltIns: "usage",
+                  useBuiltIns: "usage", // 在使用到的模块才转换，未使用的高版本语法无需转换
                   targets: {
+                    // 在相应的低版本浏览器中才转换，高版本浏览器对高版本语法已经很好的支持，无序转换
                     edge: "17",
                     firefox: "60",
                     chrome: "67",
@@ -74,9 +76,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html"
+      // 在输出目录中自动生成一个 html 文件
+      template: "src/index.html" //使用的模板
     }),
-    new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new CleanWebpackPlugin(), // 清除原来生成的内容
+    new webpack.HotModuleReplacementPlugin() // 开启热更替
   ]
 };

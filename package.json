@@ -1,13 +1,13 @@
 {
   "name": "learnwebpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "包含 .scss 、图片、webpackDevServer、babel、HMR 的打包",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "龙龙老表",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.4",
